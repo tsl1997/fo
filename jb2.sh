@@ -48,7 +48,7 @@ do
     current_rpc_port=$((start_rpc_port + i - 1))
 
     # 使用自定义路径并附加容器索引
-    storage_path="$custom_storage_path_$i"
+    storage_path="$PWD/titan_storage_$i"
 
     # 确保存储路径存在
     mkdir -p "$storage_path"
