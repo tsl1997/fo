@@ -47,14 +47,8 @@ for ((i=1; i<=container_count; i++))
 do
     current_rpc_port=$((start_rpc_port + i - 1))
 
-    # 判断用户是否输入了自定义存储路径
-    if [ -z "$custom_storage_path" ]; then
-        # 用户未输入，使用默认路径
-        storage_path="$PWD/titan_storage_$i"
-    else
-        # 用户输入了自定义路径，使用用户提供的路径
-        storage_path="$custom_storage_path"
-    fi
+    # 使用自定义路径并附加容器索引
+    storage_path="$custom_storage_path_$i"
 
     # 确保存储路径存在
     mkdir -p "$storage_path"
