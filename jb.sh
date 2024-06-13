@@ -84,9 +84,11 @@ do
 done
 
 echo "==============================所有节点均已设置并启动==================================="
-number = 0
+
+number=0
 while true; do
   sleep 60
-  number+=1
-  echo "循环中"+number
+  number=$((number + 1))
+  echo "循环中 $number"
 done
+
